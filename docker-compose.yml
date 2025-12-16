@@ -1,13 +1,14 @@
 services:
   app:
-    image: ghcr.io/your_org/river-booking:latest
+    image: ghcr.io/owlucky/river-booking:latest
     env_file:
       - .env
     restart: unless-stopped
     volumes:
       - storage:/var/www/html/storage
     depends_on:
-      - db
+      db:
+        condition: service_healthy
 
   nginx:
     image: nginx:1.27-alpine
@@ -29,6 +30,11 @@ services:
       MYSQL_ROOT_PASSWORD: rootsecret
     volumes:
       - db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-prootsecret"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
 
 volumes:
   db:
