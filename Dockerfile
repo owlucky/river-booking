@@ -1,22 +1,35 @@
 # ---------- PHP deps (composer) ----------
 FROM composer:2 AS vendor
 WORKDIR /app
+
 COPY composer.json composer.lock ./
-RUN composer install --no-dev --no-interaction --prefer-dist --no-scripts --no-progress
+RUN composer install \
+  --no-dev --no-interaction --prefer-dist \
+  --no-scripts --no-progress
 
 # ---------- Frontend build (vite) ----------
 FROM node:20-alpine AS assets
 WORKDIR /app
-COPY package*.json ./
-RUN npm ci
-COPY resources/ resources/
+
+# Копируем package.json + (опционально) lock
+COPY package.json ./
+COPY package-lock.json* ./
+
+# npm ci требует package-lock.json — поэтому делаем fallback
+RUN if [ -f package-lock.json ]; then npm ci; else npm install --no-audit --no-fund; fi
+
+# Копируем то, что нужно для сборки Vite
 COPY vite.config.* postcss.config.* tailwind.config.* ./
-# если используешь laravel-mix — подстрой под себя
+COPY resources/ resources/
+COPY public/ public/
+
+# Если у тебя есть дополнительные файлы для сборки — добавь их тут
+# COPY tsconfig.json ./
+
 RUN npm run build
 
 # ---------- App runtime (php-fpm) ----------
 FROM php:8.3-fpm-alpine AS app
-
 WORKDIR /var/www/html
 
 # системные зависимости + PHP extensions
@@ -27,7 +40,7 @@ RUN apk add --no-cache \
     && docker-php-ext-install -j$(nproc) pdo_mysql mbstring zip bcmath intl gd opcache \
     && rm -rf /tmp/*
 
-# php.ini / opcache (опционально)
+# opcache (если файл есть)
 COPY docker/php/opcache.ini /usr/local/etc/php/conf.d/opcache.ini
 
 # код приложения
@@ -41,6 +54,4 @@ COPY --from=assets /app/public/build/ ./public/build/
 RUN chown -R www-data:www-data storage bootstrap/cache
 
 USER www-data
-
-# ВАЖНО: кеши лучше собирать на деплое, но можно и тут (если .env есть в рантайме)
 CMD ["php-fpm"]
