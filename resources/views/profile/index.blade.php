@@ -10,6 +10,19 @@
 <div class="container mt-5">
 
     <h2 class="mb-4">Личный кабинет</h2>
+    {{-- ✅ Вывод сообщений сессии --}}
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    @if(session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+
 
     <div class="card mb-4">
         <div class="card-body">
@@ -28,6 +41,24 @@
                 <p><strong>Место:</strong> {{ $booking->seat->label }}</p>
                 <p><strong>Дата отправления:</strong> {{ $booking->trip->departure_at }}</p>
                 <p><strong>Телефон:</strong> {{ $booking->phone }}</p>
+                <p><strong>Цена:</strong> {{ $booking->seat->price }} ₽</p>
+
+                <p>
+                    <strong>Статус:</strong>
+                    @if($booking->status === 'paid')
+                        <span class="text-success">Оплачено</span>
+                    @else
+                        <span class="text-danger">Не оплачено</span>
+                    @endif
+                </p>
+
+                @if($booking->status !== 'paid')
+                    <form action="{{ route('booking.pay', $booking->id) }}" method="POST">
+                        @csrf
+                        <button class="btn btn-success">Оплатить</button>
+                    </form>
+                @endif
+
             </div>
         </div>
     @empty

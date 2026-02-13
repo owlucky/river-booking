@@ -9,7 +9,7 @@ class Seat extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['label'];
+    protected $fillable = ['label', 'price'];
 
     public function bookings()
     {

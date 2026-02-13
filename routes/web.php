@@ -5,6 +5,8 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\TripAdminController;
+use App\Http\Controllers\ProfileController;
+
 
 Route::get('/', [BookingController::class, 'index'])->name('booking.index');
 Route::get('/trip/{id}', [BookingController::class, 'show'])->name('booking.show');
@@ -39,9 +41,11 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::delete('/admin/trip/{id}', [TripAdminController::class, 'destroy'])
         ->name('admin.trip.delete');
 });
-use App\Http\Controllers\ProfileController;
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+
+    Route::post('/booking/{booking}/pay', [ProfileController::class, 'pay'])
+        ->name('booking.pay');
 });
 

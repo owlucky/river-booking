@@ -378,80 +378,101 @@
                         <div class="chears">
                             <button class="chear {{ in_array($seats->where('label', '42')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '42')->first()->id ?? '' }}"
-                                    data-seat-label="42">42</button>
+                                    data-seat-label="42"
+                                    data-seat-price="{{ $seats->where('label', '42')->first()->price ?? 500 }}">42</button>
                             <button class="chear {{ in_array($seats->where('label', '41')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '41')->first()->id ?? '' }}"
-                                    data-seat-label="41">41</button>
+                                    data-seat-label="41"
+                                    data-seat-price="{{ $seats->where('label', '41')->first()->price ?? 500 }}">41</button>
                             <button class="chear {{ in_array($seats->where('label', '40')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '40')->first()->id ?? '' }}"
-                                    data-seat-label="40">40</button>
+                                    data-seat-label="40"
+                                    data-seat-price="{{ $seats->where('label', '40')->first()->price ?? 500 }}">40</button>
                         </div>
                         <div class="chears">
                             <button class="chear {{ in_array($seats->where('label', '36')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '36')->first()->id ?? '' }}"
-                                    data-seat-label="36">36</button>
+                                    data-seat-label="36"
+                                    data-seat-price="{{ $seats->where('label', '36')->first()->price ?? 500 }}">36</button>
                             <button class="chear {{ in_array($seats->where('label', '35')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '35')->first()->id ?? '' }}"
-                                    data-seat-label="35">35</button>
+                                    data-seat-label="35"
+                                    data-seat-price="{{ $seats->where('label', '35')->first()->price ?? 500 }}">35</button>
                             <button class="chear {{ in_array($seats->where('label', '34')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '34')->first()->id ?? '' }}"
-                                    data-seat-label="34">34</button>
+                                    data-seat-label="34"
+                                    data-seat-price="{{ $seats->where('label', '34')->first()->price ?? 500 }}">34</button>
                         </div>
                         <div class="chears">
                             <button class="chear {{ in_array($seats->where('label', '30')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '30')->first()->id ?? '' }}"
-                                    data-seat-label="30">30</button>
+                                    data-seat-label="30"
+                                    data-seat-price="{{ $seats->where('label', '30')->first()->price ?? 500 }}">30</button>
                             <button class="chear {{ in_array($seats->where('label', '29')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '29')->first()->id ?? '' }}"
-                                    data-seat-label="29">29</button>
+                                    data-seat-label="29"
+                                    data-seat-price="{{ $seats->where('label', '29')->first()->price ?? 500 }}">29</button>
                             <button class="chear {{ in_array($seats->where('label', '28')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '28')->first()->id ?? '' }}"
-                                    data-seat-label="28">28</button>
+                                    data-seat-label="28"
+                                    data-seat-price="{{ $seats->where('label', '28')->first()->price ?? 500 }}">28</button>
                         </div>
                         <div class="chears">
                             <button class="chear {{ in_array($seats->where('label', '24')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '24')->first()->id ?? '' }}"
-                                    data-seat-label="24">24</button>
+                                    data-seat-label="24"
+                                    data-seat-price="{{ $seats->where('label', '24')->first()->price ?? 500 }}">24</button>
                             <button class="chear {{ in_array($seats->where('label', '23')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '23')->first()->id ?? '' }}"
-                                    data-seat-label="23">23</button>
+                                    data-seat-label="23"
+                                    data-seat-price="{{ $seats->where('label', '23')->first()->price ?? 500 }}">23</button>
                             <button class="chear {{ in_array($seats->where('label', '22')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '22')->first()->id ?? '' }}"
-                                    data-seat-label="22">22</button>
+                                    data-seat-label="22"
+                                    data-seat-price="{{ $seats->where('label', '22')->first()->price ?? 500 }}">22</button>
                         </div>
                         <div class="chears">
                             <button class="chear {{ in_array($seats->where('label', '18')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '18')->first()->id ?? '' }}"
-                                    data-seat-label="18">18</button>
+                                    data-seat-label="18"
+                                    data-seat-price="{{ $seats->where('label', '18')->first()->price ?? 500 }}">18</button>
                             <button class="chear {{ in_array($seats->where('label', '17')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '17')->first()->id ?? '' }}"
-                                    data-seat-label="17">17</button>
+                                    data-seat-label="17"
+                                    data-seat-price="{{ $seats->where('label', '17')->first()->price ?? 500 }}">17</button>
                             <button class="chear {{ in_array($seats->where('label', '16')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '16')->first()->id ?? '' }}"
-                                    data-seat-label="16">16</button>
+                                    data-seat-label="16"
+                                    data-seat-price="{{ $seats->where('label', '16')->first()->price ?? 500 }}">16</button>
                         </div>
                         <div class="chears">
                             <button class="chear {{ in_array($seats->where('label', '12')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '12')->first()->id ?? '' }}"
-                                    data-seat-label="12">12</button>
+                                    data-seat-label="12"
+                                    data-seat-price="{{ $seats->where('label', '12')->first()->price ?? 500 }}">12</button>
                             <button class="chear {{ in_array($seats->where('label', '11')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '11')->first()->id ?? '' }}"
-                                    data-seat-label="11">11</button>
+                                    data-seat-label="11"
+                                    data-seat-price="{{ $seats->where('label', '11')->first()->price ?? 500 }}">11</button>
                             <button class="chear {{ in_array($seats->where('label', '10')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '10')->first()->id ?? '' }}"
-                                    data-seat-label="10">10</button>
+                                    data-seat-label="10"
+                                    data-seat-price="{{ $seats->where('label', '10')->first()->price ?? 500 }}">10</button>
                         </div>
                         <div class="table"></div>
                         <div class="chears">
                             <button class="chear {{ in_array($seats->where('label', '1')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '1')->first()->id ?? '' }}"
-                                    data-seat-label="1">1</button>
+                                    data-seat-label="1"
+                                    data-seat-price="{{ $seats->where('label', '1')->first()->price ?? 500 }}">1</button>
                             <button class="chear {{ in_array($seats->where('label', '2')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '2')->first()->id ?? '' }}"
-                                    data-seat-label="2">2</button>
+                                    data-seat-label="2"
+                                    data-seat-price="{{ $seats->where('label', '2')->first()->price ?? 500 }}">2</button>
                             <button class="chear {{ in_array($seats->where('label', '3')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '3')->first()->id ?? '' }}"
-                                    data-seat-label="3">3</button>
+                                    data-seat-label="3"
+                                    data-seat-price="{{ $seats->where('label', '3')->first()->price ?? 500 }}">3</button>
                         </div>
                     </div>
                     <div class="bot">
@@ -464,91 +485,115 @@
                         <div class="chears">
                             <button class="chear {{ in_array($seats->where('label', '45')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '45')->first()->id ?? '' }}"
-                                    data-seat-label="45">45</button>
+                                    data-seat-label="45"
+                                    data-seat-price="{{ $seats->where('label', '45')->first()->price ?? 500 }}">45</button>
                             <button class="chear {{ in_array($seats->where('label', '44')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '44')->first()->id ?? '' }}"
-                                    data-seat-label="44">44</button>
+                                    data-seat-label="44"
+                                    data-seat-price="{{ $seats->where('label', '44')->first()->price ?? 500 }}">44</button>
                             <button class="chear {{ in_array($seats->where('label', '43')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '43')->first()->id ?? '' }}"
-                                    data-seat-label="43">43</button>
+                                    data-seat-label="43"
+                                    data-seat-price="{{ $seats->where('label', '43')->first()->price ?? 500 }}">43</button>
                         </div>
                         <div class="chears">
                             <button class="chear {{ in_array($seats->where('label', '39')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '39')->first()->id ?? '' }}"
-                                    data-seat-label="39">39</button>
+                                    data-seat-label="39"
+                                    data-seat-price="{{ $seats->where('label', '39')->first()->price ?? 500 }}">39</button>
                             <button class="chear {{ in_array($seats->where('label', '38')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '38')->first()->id ?? '' }}"
-                                    data-seat-label="38">38</button>
+                                    data-seat-label="38"
+                                    data-seat-price="{{ $seats->where('label', '38')->first()->price ?? 500 }}">38</button>
                             <button class="chear {{ in_array($seats->where('label', '37')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '37')->first()->id ?? '' }}"
-                                    data-seat-label="37">37</button>
+                                    data-seat-label="37"
+                                    data-seat-price="{{ $seats->where('label', '37')->first()->price ?? 500 }}">37</button>
                         </div>
                         <div class="chears">
                             <button class="chear {{ in_array($seats->where('label', '33')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '33')->first()->id ?? '' }}"
-                                    data-seat-label="33">33</button>
+                                    data-seat-label="33"
+                                    data-seat-price="{{ $seats->where('label', '33')->first()->price ?? 500 }}">33</button>
                             <button class="chear {{ in_array($seats->where('label', '32')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '32')->first()->id ?? '' }}"
-                                    data-seat-label="32">32</button>
+                                    data-seat-label="32"
+                                    data-seat-price="{{ $seats->where('label', '32')->first()->price ?? 500 }}">32</button>
                             <button class="chear {{ in_array($seats->where('label', '31')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '31')->first()->id ?? '' }}"
-                                    data-seat-label="31">31</button>
+                                    data-seat-label="31"
+                                    data-seat-price="{{ $seats->where('label', '31')->first()->price ?? 500 }}">31</button>
                         </div>
                         <div class="chears">
                             <button class="chear {{ in_array($seats->where('label', '27')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '27')->first()->id ?? '' }}"
-                                    data-seat-label="27">27</button>
+                                    data-seat-label="27"
+                                    data-seat-price="{{ $seats->where('label', '27')->first()->price ?? 500 }}">27</button>
                             <button class="chear {{ in_array($seats->where('label', '26')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '26')->first()->id ?? '' }}"
-                                    data-seat-label="26">26</button>
+                                    data-seat-label="26"
+                                    data-seat-price="{{ $seats->where('label', '26')->first()->price ?? 500 }}">26</button>
                             <button class="chear {{ in_array($seats->where('label', '25')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '25')->first()->id ?? '' }}"
-                                    data-seat-label="25">25</button>
+                                    data-seat-label="25"
+                                    data-seat-price="{{ $seats->where('label', '25')->first()->price ?? 500 }}">25</button>
                         </div>
                         <div class="chears">
                             <button class="chear {{ in_array($seats->where('label', '21')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '21')->first()->id ?? '' }}"
-                                    data-seat-label="21">21</button>
+                                    data-seat-label="21"
+                                    data-seat-price="{{ $seats->where('label', '21')->first()->price ?? 500 }}">21</button>
                             <button class="chear {{ in_array($seats->where('label', '20')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '20')->first()->id ?? '' }}"
-                                    data-seat-label="20">20</button>
+                                    data-seat-label="20"
+                                    data-seat-price="{{ $seats->where('label', '20')->first()->price ?? 500 }}">20</button>
                             <button class="chear {{ in_array($seats->where('label', '19')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '19')->first()->id ?? '' }}"
-                                    data-seat-label="19">19</button>
+                                    data-seat-label="19"
+                                    data-seat-price="{{ $seats->where('label', '19')->first()->price ?? 500 }}">19</button>
                         </div>
                         <div class="chears">
                             <button class="chear {{ in_array($seats->where('label', '15')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '15')->first()->id ?? '' }}"
-                                    data-seat-label="15">15</button>
+                                    data-seat-label="15"
+                                    data-seat-price="{{ $seats->where('label', '15')->first()->price ?? 500 }}">15</button>
                             <button class="chear {{ in_array($seats->where('label', '14')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '14')->first()->id ?? '' }}"
-                                    data-seat-label="14">14</button>
+                                    data-seat-label="14"
+                                    data-seat-price="{{ $seats->where('label', '14')->first()->price ?? 500 }}">14</button>
                             <button class="chear {{ in_array($seats->where('label', '13')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '13')->first()->id ?? '' }}"
-                                    data-seat-label="13">13</button>
+                                    data-seat-label="13"
+                                    data-seat-price="{{ $seats->where('label', '13')->first()->price ?? 500 }}">13</button>
                         </div>
                         <div class="chears">
                             <button class="chear {{ in_array($seats->where('label', '9')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '9')->first()->id ?? '' }}"
-                                    data-seat-label="9">9</button>
+                                    data-seat-label="9"
+                                    data-seat-price="{{ $seats->where('label', '9')->first()->price ?? 500 }}">9</button>
                             <button class="chear {{ in_array($seats->where('label', '8')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '8')->first()->id ?? '' }}"
-                                    data-seat-label="8">8</button>
+                                    data-seat-label="8"
+                                    data-seat-price="{{ $seats->where('label', '8')->first()->price ?? 500 }}">8</button>
                             <button class="chear {{ in_array($seats->where('label', '7')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '7')->first()->id ?? '' }}"
-                                    data-seat-label="7">7</button>
+                                    data-seat-label="7"
+                                    data-seat-price="{{ $seats->where('label', '7')->first()->price ?? 500 }}">7</button>
                         </div>
                         <div class="table-2"></div>
                         <div class="chears">
                             <button class="chear {{ in_array($seats->where('label', '4')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '4')->first()->id ?? '' }}"
-                                    data-seat-label="4">4</button>
+                                    data-seat-label="4"
+                                    data-seat-price="{{ $seats->where('label', '4')->first()->price ?? 500 }}">4</button>
                             <button class="chear {{ in_array($seats->where('label', '5')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '5')->first()->id ?? '' }}"
-                                    data-seat-label="5">5</button>
+                                    data-seat-label="5"
+                                    data-seat-price="{{ $seats->where('label', '5')->first()->price ?? 500 }}">5</button>
                             <button class="chear {{ in_array($seats->where('label', '6')->first()->id ?? '', $bookedSeats) ? 'booked' : '' }}"
                                     data-seat-id="{{ $seats->where('label', '6')->first()->id ?? '' }}"
-                                    data-seat-label="6">6</button>
+                                    data-seat-label="6"
+                                    data-seat-price="{{ $seats->where('label', '6')->first()->price ?? 500 }}">6</button>
                         </div>
                     </div>
                 </div>
@@ -565,13 +610,14 @@
 
     <div class="booking-form">
         <h4>Забронировать место</h4>
-        <div id="selected-seat-info" class="selected-seat-info" style="display: none;">
-            Выбрано место: <strong id="selected-seat-label"></strong>
+        <div id="selected-seat-info" class="selected-seat-info" style="display:none;">
+            <h5>Выбраны места:</h5>
+            <ul id="selected-seat-list"></ul>
         </div>
 
         <form action="{{ route('booking.store', $trip->id) }}" method="POST" id="booking-form">
             @csrf
-            <input type="hidden" name="seat_id" id="selected-seat-id">
+            <div id="selected-seats-container"></div>
 
             <div class="form-group">
                 <label class="form-label">Имя</label>
@@ -592,7 +638,14 @@
                 <button class="btn btn-primary" disabled title="Войдите, чтобы забронировать">Забронировать выбранное место</button>
                 <p class="text-danger mt-2">Для бронирования необходимо <a href="{{ route('login') }}">войти</a>.</p>
             @else
-                <button class="btn btn-primary">Забронировать выбранное место</button>
+                <button class="btn btn-primary" name="action" value="reserve">
+                    Забронировать выбранные места
+                </button>
+
+                <button class="btn btn-success ms-2" name="action" value="pay">
+                    Оплатить выбранные места
+                </button>
+
             @endguest
 
         </form>
@@ -600,40 +653,63 @@
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        let selectedSeat = null;
+    document.addEventListener('DOMContentLoaded', () => {
 
-        // Обработчики для всех мест
-        document.querySelectorAll('.chear:not(.booked)').forEach(button => {
-            button.addEventListener('click', function() {
-                const seatId = this.getAttribute('data-seat-id');
-                const seatLabel = this.getAttribute('data-seat-label');
+        const seats = document.querySelectorAll('.chear');
+        const selectedSeatsContainer = document.getElementById('selected-seats-container');
+        const selectedSeatList = document.getElementById('selected-seat-list');
+        const infoBlock = document.getElementById('selected-seat-info');
 
-                // Снимаем выделение с предыдущего выбранного места
-                if (selectedSeat) {
-                    selectedSeat.classList.remove('selected');
+        let selected = [];
+
+        seats.forEach(seat => {
+
+            seat.addEventListener('click', () => {
+
+                if (seat.classList.contains('booked')) {
+                    alert('Это место уже занято!');
+                    return;
                 }
 
-                // Выделяем новое место
-                this.classList.add('selected');
-                selectedSeat = this;
+                const id = seat.dataset.seatId;
+                const label = seat.dataset.seatLabel;
+                const price = seat.dataset.seatPrice;
 
-                // Заполняем скрытое поле и показываем информацию
-                document.getElementById('selected-seat-id').value = seatId;
-                document.getElementById('selected-seat-label').textContent = seatLabel;
-                document.getElementById('selected-seat-info').style.display = 'block';
-                document.getElementById('submit-btn').disabled = false;
+                // Снять выбор
+                if (seat.classList.contains('selected')) {
+                    seat.classList.remove('selected');
+                    selected = selected.filter(s => s.id !== id);
+                }
+                // Добавить выбор
+                else {
+                    seat.classList.add('selected');
+                    selected.push({id, label, price});
+                }
+
+                // Перерисовываем скрытые input
+                selectedSeatsContainer.innerHTML = '';
+                selected.forEach(seat => {
+                    const input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = 'seat_ids[]';
+                    input.value = seat.id;
+                    selectedSeatsContainer.appendChild(input);
+                });
+
+                // Отображаем список выбранных мест
+                selectedSeatList.innerHTML = '';
+                selected.forEach(seat => {
+                    const li = document.createElement('li');
+                    li.textContent = `Место ${seat.label} — ${seat.price} ₽`;
+                    selectedSeatList.appendChild(li);
+                });
+
+                infoBlock.style.display = selected.length > 0 ? 'block' : 'none';
             });
         });
 
-        // Заблокировать клик по занятым местам
-        document.querySelectorAll('.chear.booked').forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                alert('Это место уже занято!');
-            });
-        });
     });
 </script>
+
 </body>
 </html>

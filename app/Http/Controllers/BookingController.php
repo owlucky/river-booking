@@ -7,6 +7,7 @@ use App\Models\Seat;
 use App\Models\Booking;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class BookingController extends Controller
 {
@@ -36,30 +37,75 @@ class BookingController extends Controller
 
     public function store(Request $request, $tripId)
     {
-        $validated = $request->validate([
-            'seat_id' => 'required|exists:seats,id',
+        $request->validate([
+            'seat_ids' => 'required|array|min:1',
+            'seat_ids.*' => 'exists:seats,id',
             'first_name' => 'required|string',
             'last_name' => 'required|string',
             'phone' => 'required|string',
         ]);
 
-        // Проверка, занято ли место
-        if (Booking::where('trip_id', $tripId)->where('seat_id', $validated['seat_id'])->exists()) {
-            return back()->with('error', 'Это место уже забронировано.');
+        $action = $request->input('action', 'reserve');
+
+        try {
+            DB::beginTransaction();
+
+            $createdBookings = [];
+
+            foreach ($request->seat_ids as $seatId) {
+
+                if (Booking::where('trip_id', $tripId)->where('seat_id', $seatId)->exists()) {
+                    throw new \Exception("Место $seatId уже забронировано.");
+                }
+
+                $booking = Booking::create([
+                    'trip_id'    => $tripId,
+                    'seat_id'    => $seatId,
+                    'first_name' => $request->first_name,
+                    'last_name'  => $request->last_name,
+                    'phone'      => $request->phone,
+                    'user_id'    => Auth::id(),
+                    'status'     => 'unpaid',
+                ]);
+
+                $createdBookings[] = $booking;
+
+                if ($action === 'pay') {
+
+
+                    $success = rand(1, 4);
+
+                    if ($success <= 2) {
+
+                        throw new \Exception("Ошибка оплаты! Операция отменена.");
+                    }
+
+
+                    $booking->status = 'paid';
+                    $booking->save();
+                }
+            }
+
+            DB::commit();
+
+        } catch (\Exception $e) {
+
+            DB::rollBack();
+            return back()->with('error', $e->getMessage());
         }
 
-        Booking::create([
-            'trip_id' => $tripId,
-            'seat_id' => $validated['seat_id'],
-            'first_name' => $validated['first_name'],
-            'last_name' => $validated['last_name'],
-            'phone' => $validated['phone'],
-            'user_id' => Auth::id(),
-        ]);
+        if ($action === 'reserve') {
+            return back()->with('success', 'Места успешно забронированы!');
+        }
 
-
-
-        return back()->with('success', 'Место успешно забронировано!');
+        if ($action === 'pay') {
+            return back()->with('success', 'Все места забронированы и успешно оплачены!');
+        }
     }
+
+
+
+
+
 }
 
